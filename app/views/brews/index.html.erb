@@ -9,8 +9,8 @@
 <% @brews.each do |brew| %>
   <div class="row">
     <div class="span2"><%= brew.title %></div>
-    <div class="span2"><%= brew.fermentation_started_at.strftime("%Y-%d-%m %H:%M") %></div>
-    <div class="span2"><%= brew.fermentation_stopped_at.strftime("%Y-%d-%m %H:%M") %></div>
+    <div class="span2"><%= formatted_datetime brew.fermentation_started_at %></div>
+    <div class="span2"><%= formatted_datetime brew.fermentation_stopped_at %></div>
     <div class="span2">
       <%= link_to t('show'), brew %>
       <%= link_to t('edit'), edit_brew_path(brew) %>
