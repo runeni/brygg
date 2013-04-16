@@ -1,0 +1,34 @@
+"nb_NO":
+  are you sure?: "Er du sikker?"
+  back: "Tilbake"
+  destroy: "Slett"
+  edit: "Endre"
+  edit account: "Endre profil"
+  editing brew: "Endre brygg"
+  fermentation started at: "Gjæring started"
+  fermentation stopped at: "Gjæring stoppet"
+  home: "Hjem"
+  listing brews: "Bryggliste"
+  logout: "Logg ut"
+  new brew: "Nytt brygg"
+  show: "Vis"
+  signup: "Registrer deg" 
+  title: "Tittel"
+
+  activerecord:
+    models:
+      brew: "brygg"
+
+  attributes:
+    created_at: "Opprettet"
+    fermentation_started_at: "Gjæring started"
+    fermentation_stopped_at: "Gjæring stoppet"
+    title: "Tittel"
+    updated_at: "Oppdatert"
+
+  helpers:
+    submit:
+      create: "Opprett %{model}"
+      update: "Oppdater %{model}"
+
+  

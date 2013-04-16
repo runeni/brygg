@@ -1,21 +1,21 @@
-<%= link_to "Home", root_path, :class => 'brand' %>
+<%= link_to t("home"), root_path, :class => 'brand' %>
 <ul class="nav">
   <% if true %>
     <li>
-    <%= link_to('Logout', brews_path, :method=>'delete') %>
+    <%= link_to(t('logout'), brews_path, :method=>'delete') %>
     </li>
   <% else %>
     <li>
-    <%= link_to('Login', brews_path)  %>
+    <%= link_to(t 'login', brews_path)  %>
     </li>
   <% end %>
   <% if true %>
     <li>
-    <%= link_to('Edit account', brews_path) %>
+    <%= link_to(t('edit account'), brews_path) %>
     </li>
   <% else %>
     <li>
-    <%= link_to('Sign up', brews_path)  %>
+    <%= link_to(t 'sign up', brews_path)  %>
     </li>
   <% end %>
 </ul>
