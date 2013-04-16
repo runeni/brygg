@@ -26,6 +26,17 @@
       </span>
     </div>
   </div>
+  <div class="well">
+    <%= f.label :fermentation_stopped_at %><br />
+    <div id="datetimepicker2" class="input-append date">
+      <%= f.text_field :fermentation_stopped_at, :data => {:format => "yyyy-MM-dd hh:mm:ss"} do |tmp| %>
+        <!-- TEST -->
+      <% end %>
+      <span class="add-on">
+        <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+      </span>
+    </div>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

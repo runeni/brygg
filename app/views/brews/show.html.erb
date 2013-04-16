@@ -5,6 +5,15 @@
   <%= @brew.title %>
 </p>
 
+<p>
+  <b>Fermentation started at:</b>
+  <%= @brew.fermentation_started_at %>
+</p>
+
+<p>
+  <b>Fermentation stopped at:</b>
+  <%= @brew.fermentation_stopped_at %>
+</p>
 
 <%= link_to 'Edit', edit_brew_path(@brew) %> |
 <%= link_to 'Back', brews_path %>
