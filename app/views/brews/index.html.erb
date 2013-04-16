@@ -1,22 +1,23 @@
 <h1><%= t 'listing brews' %></h1>
 
-<table>
-  <tr>
-    <th><%= t 'title' %></th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="row">
+  <div class="span2"><h5><%= t 'title' %></h5></div>
+  <div class="span2"><h5><%= t 'fermentation started at' %></h5></div>
+  <div class="span2"><h5><%= t 'fermentation stopped at' %></h5></div>
+</div>
 
 <% @brews.each do |brew| %>
-  <tr>
-    <td><%= brew.title %></td>
-    <td><%= link_to t('show'), brew %></td>
-    <td><%= link_to t('edit'), edit_brew_path(brew) %></td>
-    <td><%= link_to t('destroy'), brew, method: :delete, data: { confirm: t('are you sure?') } %></td>
-  </tr>
+  <div class="row">
+    <div class="span2"><%= brew.title %></div>
+    <div class="span2"><%= brew.fermentation_started_at.strftime("%Y-%d-%m %H:%M") %></div>
+    <div class="span2"><%= brew.fermentation_stopped_at.strftime("%Y-%d-%m %H:%M") %></div>
+    <div class="span2">
+      <%= link_to t('show'), brew %>
+      <%= link_to t('edit'), edit_brew_path(brew) %>
+      <%= link_to t('destroy'), brew, method: :delete, data: { confirm: t('are you sure?') } %>
+    </div>
+  </div>
 <% end %>
-</table>
 
 <br />
 
