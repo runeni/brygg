@@ -1,24 +1,25 @@
 <h1><%= t 'listing brews' %></h1>
 
-<div class="row">
-  <div class="span2"><h5><%= t 'title' %></h5></div>
-  <div class="span2"><h5><%= t 'fermentation started at' %></h5></div>
-  <div class="span2"><h5><%= t 'fermentation stopped at' %></h5></div>
+<div class="well">
+  <div class="row">
+    <div class="span2"><h5><%= t 'title' %></h5></div>
+    <div class="span2"><h5><%= t 'fermentation started at' %></h5></div>
+    <div class="span2"><h5><%= t 'fermentation stopped at' %></h5></div>
+  </div>
+
+  <% @brews.each do |brew| %>
+    <div class="row">
+      <div class="span2"><%= brew.title %></div>
+      <div class="span2"><%= formatted_datetime brew.fermentation_started_at %></div>
+      <div class="span2"><%= formatted_datetime brew.fermentation_stopped_at %></div>
+      <div class="span2">
+        <%= link_to t('show'), brew %>
+        <%= link_to t('edit'), edit_brew_path(brew) %>
+        <%= link_to t('destroy'), brew, method: :delete, data: { confirm: t('are you sure?') } %>
+      </div>
+    </div>
+  <% end %>
+
 </div>
 
-<% @brews.each do |brew| %>
-  <div class="row">
-    <div class="span2"><%= brew.title %></div>
-    <div class="span2"><%= formatted_datetime brew.fermentation_started_at %></div>
-    <div class="span2"><%= formatted_datetime brew.fermentation_stopped_at %></div>
-    <div class="span2">
-      <%= link_to t('show'), brew %>
-      <%= link_to t('edit'), edit_brew_path(brew) %>
-      <%= link_to t('destroy'), brew, method: :delete, data: { confirm: t('are you sure?') } %>
-    </div>
-  </div>
-<% end %>
-
-<br />
-
-<%= link_to t('new brew'), new_brew_path, :class => "btn btn-primary btn-large" %>
+<%= link_to t('new brew'), new_brew_path, :class => "btn" %>

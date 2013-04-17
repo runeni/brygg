@@ -1,19 +1,16 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b><%= t 'title' %>:</b>
-  <%= @brew.title %>
-</p>
+<h1><%= @brew.title %></h1>
+<div class="well">
 
-<p>
+  <p>
   <b><%= t 'fermentation started at' %>:</b>
   <%= @brew.fermentation_started_at %>
-</p>
+  </p>
 
-<p>
+  <p>
   <b><%= t 'fermentation stopped at' %>:</b>
   <%= @brew.fermentation_stopped_at %>
-</p>
-
-<%= link_to t('edit'), edit_brew_path(@brew) %> |
-<%= link_to t('back'), brews_path %>
+  </p>
+</div>
+<%= link_to t('edit'), edit_brew_path(@brew), :class => "btn" %> 
+<%= link_to t('back'), brews_path, :class => "btn" %>
